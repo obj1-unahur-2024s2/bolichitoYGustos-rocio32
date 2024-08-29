@@ -23,5 +23,15 @@ object bolichito {
   }
 
   method tieneObjetoDeColor(unColor) {
-    return objetoEnMostrador.color()
+    return objetoEnMostrador.color() == unColor || objetoEnVidriera.color() == unColor
+}
+
+  method puedeMejorar() {
+    return not self.estaEquilibrado() || self.esMonocromatico()
+  }
+
+  method puedeOfrecerAlgoA(unaPersona) {
+    return unaPersona.leGusta(objetoEnMostrador) || unaPersona.leGusta(objetoEnVidriera)
+  }
+
 }
